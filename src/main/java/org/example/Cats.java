@@ -43,7 +43,6 @@ public class Cats {
         return this.upvotes;
     }
 
-
     @Override
     public String toString() {
         return "Cats{" +

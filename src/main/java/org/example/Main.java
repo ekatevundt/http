@@ -10,7 +10,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.entity.ContentType;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.util.EntityUtils;
+
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -35,7 +35,6 @@ public class Main {
         Arrays.stream(response.getAllHeaders()).forEach(System.out::println);
         String body = new String(response.getEntity().getContent().readAllBytes(), StandardCharsets.UTF_8);
 
-        // System.out.println(body);
         List<Cats> cats = mapper.readValue(body, new TypeReference<>() {
         });
         for (int i = 0; i < cats.size(); i++) {
